@@ -15,4 +15,10 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.food.orderting.system</groupId>
+            <artifactId>order-application-service</artifactId>
+        </dependency>
+    </dependencies>
 </project>
