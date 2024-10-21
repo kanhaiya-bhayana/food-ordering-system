@@ -1,0 +1,19 @@
+package com.food.ordering.system.order.service.domain.interfaces;
+
+import com.food.ordering.system.order.service.domain.entity.Order;
+import com.food.ordering.system.order.service.domain.entity.Restaurent;
+import com.food.ordering.system.order.service.domain.event.OrderCancelledEvent;
+import com.food.ordering.system.order.service.domain.event.OrderCreatedEvent;
+import com.food.ordering.system.order.service.domain.event.OrderPaidEvent;
+
+import java.util.List;
+
+public interface IOrderDomainService {
+    OrderCreatedEvent validateAndInitiateOrder(Order order, Restaurent restaurent);
+
+    OrderPaidEvent payOrder(Order order);
+    void approveOrder(Order order);
+
+    OrderCancelledEvent cancelOrderPayment(Order order, List<String> failureMessages);
+    void cancelOrder(Order order, List<String> failureMessages);
+}
